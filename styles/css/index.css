@@ -691,7 +691,7 @@ footer {
     position: absolute;
     display: none;
     top: 0;
-    right: 0;
+    right: 2rem;
     transition: display .3s;
   }
 
