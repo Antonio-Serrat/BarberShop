@@ -859,7 +859,7 @@ footer {
   .home_info_appointment {
     width: 40rem;
     height: 45rem;
-    top: 15%;
+    top: 25%;
   }
 
   .home_info_appointment_text {
@@ -868,8 +868,7 @@ footer {
 
   .home_info_hours {
     font-size: 2rem;
-    flex-direction: column;
-    gap: 2rem;
+    bottom: 10rem;
   }
 
   .about_cards {
