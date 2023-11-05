@@ -132,6 +132,13 @@ input {
   height: 100%;
 }
 
+.crazy_background {
+  background-color: #352e01;
+  opacity: 1;
+  background-image:  linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077);
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
 /***************** HEADER *******************/
 
 .nav {
@@ -260,6 +267,7 @@ input {
 #About {
   height: 100vh;
   width: 100vw;
+  background-color: black;
 }
 
 .about_cards {
@@ -293,7 +301,7 @@ input {
 
 .about_img {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
 }
 
 /************* BARBERS SECTION ***************/
@@ -416,33 +424,26 @@ input {
 
 .work_1 {
   grid-area: work_1;
-  background-color: rebeccapurple;
 }
 
 .work_2 {
   grid-area: work_2;
-  background-color: red;
 }
 
 .work_3 {
   grid-area: work_3;
-  background-color: blue;
 }
 
 .work_4 {
   grid-area: work_4;
-  background-color: white;
 }
 
 .work_5 {
   grid-area: work_5;
-  background-color: black;
-  height: 70rem;
 }
 
 .work_6 {
   grid-area: work_6;
-  background-color: violet;
 }
 
 .work_7 {
@@ -460,11 +461,6 @@ input {
   height: 100vh;
   width: 100vw;
 	height: 100vh;
-	background-color: #352e01;
-  opacity: 1;
-  background-image:  linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077);
-  background-size: 80px 140px;
-  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
 }
 
 .formulary {
@@ -513,13 +509,22 @@ input {
   font-weight: 900;
   background-color: white;
   color: black;
+  transition: background-color .5s ease-in-out;
+}
+
+.btn_submit:hover {
+  background-color: black;
+  color: white;
 }
 
 /***************** FOOTER **************/
 footer {
   height: 50rem;
   width: 100vw;
-  background-color: grey;
+}
+
+#Contact {
+  background-color: black
 }
 
 .footer_nav {
@@ -539,7 +544,7 @@ footer {
 }
 
 .footer_menu_item {
-  color: black;
+  color: white;
   transition: color .3s;
 }
 
@@ -548,7 +553,7 @@ footer {
 }
 
 .footer_menu_item:hover {
-  color: white;
+  color: rgba(236, 171, 18, 0.63);
 }
 
 .contact {
@@ -569,8 +574,7 @@ footer {
 }
 
 .contact span:hover {
-  color: black;
-}
+  color: rgba(236, 171, 18, 0.63);}
 
 .credits {
   position: absolute;
@@ -591,10 +595,11 @@ footer {
   font-size: 3rem;
   margin-left: 1rem;
   transition: color .4s ease-in-out;
+  color: rgba(236, 171, 18, 0.63);
 }
 
 .developer:hover {
-  color: black;
+  color: rgb(3, 168, 146)
 }
 
 #btn_menu {
