@@ -67,6 +67,7 @@ button {
   padding-top: 0.3rem;
   font-family: 'Style Script';
   font-size: 4rem;
+  transition: background-color .7s;
 }
 
 .menu_item:hover {
@@ -857,6 +858,7 @@ footer {
   .home_info_appointment {
     width: 40rem;
     height: 45rem;
+    top: 15%;
   }
 
   .home_info_appointment_text {
@@ -865,6 +867,8 @@ footer {
 
   .home_info_hours {
     font-size: 2rem;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   .about_cards {
