@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/css/index.css">
+  <title>Turn System</title>
+  <script src="./js/index.js" defer ></script>
+</head>
+<body>
+  <header id="Home">
+    <nav class="nav">
+      <ul class="menu">
+        <li><a class="menu_item" href="#Home">Home</a></li>
+        <li><a class="menu_item" href="#About">Nosotros</a></li>
+        <li><a class="menu_item" href="#Barbers">Barberos</a></li>
+        <li><a class="menu_item" href="#Works">Trabajos</a></li>
+        <li><a class="menu_item" href="#Appointment">Reserva</a></li>
+        <li><a class="menu_item" href="#Contact">Contacto</a></li>
+      </ul>
+      <button id="btn_menu">
+        <div class="btn_container_open">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);">
+            <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+          </svg>
+        </div>
+        <div class="btn_container_close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: rotate(270deg);">
+            <path d="M10 6.5C10 4.57 8.43 3 6.5 3S3 4.57 3 6.5 4.57 10 6.5 10a3.45 3.45 0 0 0 1.613-.413l2.357 2.528-2.318 2.318A3.46 3.46 0 0 0 6.5 14C4.57 14 3 15.57 3 17.5S4.57 21 6.5 21s3.5-1.57 3.5-3.5c0-.601-.166-1.158-.434-1.652l2.269-2.268L17 19.121a3 3 0 0 0 2.121.879H22L9.35 8.518c.406-.572.65-1.265.65-2.018zM6.5 8C5.673 8 5 7.327 5 6.5S5.673 5 6.5 5 8 5.673 8 6.5 7.327 8 6.5 8zm0 11c-.827 0-1.5-.673-1.5-1.5S5.673 16 6.5 16s1.5.673 1.5 1.5S7.327 19 6.5 19z"></path>
+            <path d="m17 4.879-3.707 4.414 1.414 1.414L22 4h-2.879A3 3 0 0 0 17 4.879z"></path>
+          </svg>
+        </div>
+      </button>
+    </nav>
+    <section class="home_info relative">
+      <div class="img_container header_img_background">
+        <img class="header_img" src="./assets/images/barber_chair.jpg" alt="img_header">
+      </div>
+      <div class="home_info_appointment">
+        <div class="home_info_content_appointment">
+          <div class="img_container_appointment img">
+            <img class="home_info_appointment_img" src="./assets/images/barber_tools.jpg" alt="img_home_info_appointment">
+          </div>
+          <a class="home_info_appointment_text" href="#Appointment">
+            <span>RESERVA TU TURNO AHORA</span>
+          </a>
+        </div>
+      </div>
+      <div class="home_info_hours">
+        <div>
+          <span>Lunes - Miercoles - Viernes</span>
+          <span>9hs - 12hs</span>
+          <span>15hs - 20hs</span>
+        </div>
+        <div>
+          <span>Martes - Jueves</span>
+          <span>10hs - 13hs</span>
+          <span>16hs - 19hs</span>
+        </div>
+        <div>
+          <span>Sabados - Domingos</span>
+          <span>10hs - 15hs</span>
+        </div>
+      </div>
+    </section>
+  </header>
+  <main>
+    <section id="About" class="relative">
+      <div class="section_title">
+        <h1 class="section_title_text">Nosotros</h1>
+      </div>
+      <article class="about_cards">
+        <div class="about_info">
+          <span>
+            Somos barberos de pura cepa.
+            <br>
+            Seguimos la tradicion de los abuelos de nuestros abuelos para conseguir
+            un corte y afeitado con la mejor estetica y con el proceso mas comodo posible.
+            <br>
+            Utilizamos herramientas
+            de materiales puros y poseemos un pulso mas fino que el un de cirujano.
+          </span>
+        </div>
+      </article>
+      <div class="img_container">
+        <img class="about_img" src="./assets/images/barber_shop_seats.jpg" alt="about">
+      </div>
+    </section>
+    <section id="Barbers" class="relative">
+      <div class="section_title">
+        <h1 class="section_title_text">Barberos</h1>
+      </div>
+      <article class="section_cards">
+        <div class="section_cards_info barber_card1">
+          <div class="barber_card_content1 relative" id="barber_1">
+            <div class="img_container_barber">
+              <img class="img_barber" src="assets/images/barber_1.jpg" alt="img_barber1">
+            </div>
+            <span class="name_barber1">Julian Aconda</span>
+          </div>
+        </div>
+        <div class="section_cards_info barber_card2">
+          <div class="barber_card_content2 relative" id="barber_2">
+            <div class="img_container_barber">
+              <img class="img_barber" src="assets/images/barber_2.jpg"img_barber2">
+            </div>
+            <span class="name_barber2">Alme Ndrado</span>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section id="Works" class="relative">
+      <div class="section_title">
+        <h1 class="section_title_text">Algunos Trabajos</h1>
+      </div>
+      <div class="works_gallery">
+        <div class="work_1 work_img_container">
+          <img class="img_work" src="./assets/images/corte1.jpg" alt="corte_1">
+        </div>
+        <div class="work_2 work_img_container">
+          <img class="img_work" src="./assets/images/corte2.jpg" alt="corte_2">
+        </div>
+        <div class="work_3 work_img_container">
+          <img class="img_work" src="./assets/images/corte3.jpg" alt="corte_3">
+        </div>
+        <div class="work_4 work_img_container">
+          <img class="img_work" src="./assets/images/corte4.jpg" alt="corte_4">
+        </div>
+        <div class="work_5 work_img_container">
+          <img class="img_work" src="./assets/images/corte5.jpg" alt="corte_5">
+        </div>
+        <div class="work_6 work_img_container">
+          <img class="img_work" src="./assets/images/corte6.jpg" alt="corte_6">
+        </div>
+        <div class="work_7 work_img_container">
+          <img class="img_work" src="./assets/images/corte7.jpg" alt="corte_7">
+        </div>
+        <div class="work_8 work_img_container">
+          <img class="img_work" src="./assets/images/corte8.jpg" alt="corte_8">
+        </div>
+      </div>
+    </section>
+    <section id="Appointment" class="relative">
+      <div class="section_title">
+        <h1 class="section_title_text">Reserva Ya!</h1>
+      </div>
+      <div class="formulary">
+        <form id="appointment_form" method="post">
+          <label class="label_form" for="name">Nombre</label>
+          <input class="input_form" type="text" name="name" id="name">
+          <label class="label_form" for="surname">Apellido</label>
+          <input class="input_form" type="text" name="surname" id="surname">
+          <label class="label_form" for="email">Email</label>
+          <input class="input_form" type="text" name="email" id="email">
+          <label class="label_form" for="phone">Phone</label>
+          <input class="input_form" type="text" name="phone" id="phone">
+          <label class="label_form" for="date">Dia</label>
+          <input class="input_form" type="date" name="date" id="date">
+          <div class="btn_container">
+            <button class="btn_submit" type="submit">></button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <footer class="relative">
+      <nav class="footer_nav">
+        <ul class="footer_menu">
+          <li><a class="footer_menu_item" href="#Home">Home</a></li>
+          <li><a class="footer_menu_item" href="#About">Nosotros</a></li>
+          <li><a class="footer_menu_item" href="#Barbers">Barberos</a></li>
+          <li><a class="footer_menu_item" href="#Works">Trabajos</a></li>
+          <li><a class="footer_menu_item" href="#Appointment">Reserva</a></li>
+          <li><a class="footer_menu_item" href="#Contact">Contactanos</a></li>
+        </ul>
+      </nav>
+      <div id="Contact" class="contact">
+        <span><a href="mailto:somosbarber@fakemail.com">somosbarber@fakemail.com</a></span>
+        <span><a href="tel:+34123456789">+34123456789</a></span>
+      </div>
+      <div class="barberIconContainer pole_left">
+        <div class="ball"></div>
+        <div class="endCap"></div>
+        <div class="cap"></div>
+        <div class="barberWrap">
+          <div class="barber"></div>
+        </div>
+        <div class="cap"></div>
+        <div class="endCap"></div>
+        <div class="ball"></div>
+      </div>
+      <div class="barberIconContainer pole_right">
+        <div class="ball"></div>
+        <div class="endCap"></div>
+        <div class="cap"></div>
+        <div class="barberWrap">
+          <div class="barber"></div>
+        </div>
+        <div class="cap"></div>
+        <div class="endCap"></div>
+        <div class="ball"></div>
+      </div>
+      <div class="credits">
+        <span>Todos los derechos reserbvados ©</span>
+        <span>Designed & Developed by: <a class="developer" href="http://linkedin.com/in/antonio-serrat/" target="_blank" rel="norefer">Antonio Serrat</a></span>
+        <span>2023</span>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

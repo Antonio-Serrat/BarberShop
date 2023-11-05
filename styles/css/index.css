@@ -1,0 +1,962 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/***************** COMMONS *******************/
+
+html {
+  font-size: calc(100vw / 1920 * 10);
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 767px ){
+  html {
+    font-size: calc(100vw / 750 * 10);
+  }
+}
+
+@font-face {
+  font-family: 'Style Script';
+  src: url('../../assets/fonts/StyleScript-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: regular;
+}
+
+@font-face {
+  font-family: 'Fanwood Text italic';
+  src: url('../../assets/fonts/FanwoodText-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: regular;
+}
+
+@font-face {
+  font-family: 'Fanwood Text regular';
+  src: url('../../assets/fonts/FanwoodText-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: regular;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  height: 7rem;
+  background-color: rgba(0, 0, 0, 0.78);
+}
+
+.menu_item {
+  display: flex;
+  width: 20rem;
+  height: 2rem;
+  align-items: flex-start;
+  padding-left: 2.5rem;
+  padding-top: 0.3rem;
+  font-family: 'Style Script';
+  font-size: 4rem;
+}
+
+.menu_item:hover {
+  background-color: rgba(182, 130, 8, 0.41);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section_title {
+  width: 38%;
+  position: absolute;
+  height: 10rem;
+  z-index: 10;
+  margin-top: 15rem;
+  background-color: white;
+}
+
+.section_title_text {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  margin-left: 5rem;
+  z-index: 10;
+  font-family: 'Style Script';
+  font-size: 6rem;
+}
+
+.relative {
+  position: relative;
+}
+
+input {
+  box-sizing: border-box;
+}
+
+.section_cards {
+  position: absolute;
+  display: grid;
+  z-index: 10;
+  grid-template-rows: 50vh;
+  grid-template-columns: repeat(2, 50%);
+  top: 40%;
+  align-items: center;
+  width: 100vw;
+}
+
+.section_cards_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem;
+  padding: 2.5rem;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.301);
+  backdrop-filter: blur(0.3rem);
+  color: white;
+  height: 100%;
+}
+
+/***************** HEADER *******************/
+
+.nav {
+  position: fixed;
+  display: block;
+  color: white;
+  z-index: 100;
+  width: 100%;
+  height: 5rem;
+}
+
+.img_container {
+  background-color: black;
+}
+
+.header_img_background {
+  height: 100vh;
+  width: 100vw;
+}
+
+.header_img {
+  opacity: .5;
+}
+
+.home_info {
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.home_info_appointment {
+  color: wheat;
+  width: 45rem;
+  height: 50rem;
+  position: absolute;
+  border-radius: 1rem;
+  overflow: hidden;
+  top: 25%;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.home_info_content_appointment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.home_info_content_appointment::before {
+  top: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  left: 2rem;
+  border: .2rem solid white;
+  border-radius: 1rem;
+  opacity: 0;
+  content: '';
+  backdrop-filter: blur(.3rem);
+  /* -webkit-backdrop-filter: blur(.3rem); */
+  font-size: 2.5rem;
+  position: absolute;
+  transition: opacity 0.55s;
+}
+
+.home_info_content_appointment:hover::before {
+  opacity: 1;
+}
+
+.home_info_appointment_text {
+  position: absolute;
+  right: 50%;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transform: translateX(50%);
+  font-family: 'Fanwood Text regular';
+  font-weight: 900;
+  font-size: 4rem;
+  color: black;
+  transition: opacity .8s ease-in-out;
+}
+
+.home_info_content_appointment:hover .home_info_appointment_text {
+  opacity: 1;
+}
+
+.home_info_appointment_text span {
+  z-index: 10;
+}
+
+.img_container_appointment {
+  height: 100%;
+  width: 100%;
+}
+
+.home_info_hours {
+  display: flex;
+  position: absolute;
+  justify-content: space-around;
+  z-index: 10;
+  bottom: 0;
+  width: 100%;
+  color: wheat;
+  font-family: 'Fanwood Text regular';
+  font-size: 2.5rem;
+  font-weight: 700;
+  bottom: 0;
+  margin-bottom: 2rem;
+}
+
+.home_info_hours span {
+  display: block;
+}
+
+/************** ABOUT SECTION ***************/
+
+#About {
+  height: 100vh;
+  width: 100vw;
+}
+
+.about_cards {
+  position: absolute;
+  top: 33%;
+  right: 50%;
+  transform: translateX(50%);
+  display: flex;
+  z-index: 10;
+  align-items: center;
+}
+
+.about_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 4rem;
+  padding: 11rem;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.781);
+  backdrop-filter: blur(0.3rem);
+  color: white;
+  height: 40rem;
+}
+
+.about_info span {
+  font-family: 'Fanwood Text regular';
+  font-size: 3rem;
+}
+
+.about_img {
+  width: 100vw;
+  height: 100vh;
+}
+
+/************* BARBERS SECTION ***************/
+
+#Barbers {
+  background-color: rgb(36, 36, 36);
+  height: 100vh;
+  width: 100vw;
+}
+
+.barber_card1 {
+  margin-bottom: 13rem;
+}
+
+.barber_card2 {
+  margin-top: 13rem;
+}
+
+.img_container_barber {
+  width: 100%;
+  height: 100%;
+}
+
+.img_barber {
+  width: 100%;
+  height: 100%;
+}
+
+.barber_card_content1,
+.barber_card_content2,
+.barber_card_content3 {
+  width: 100%;
+  height: 100%;
+}
+
+.name_barber1,
+.name_barber2,
+.name_barber3 {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  opacity: 0;
+  transform: translateX(50%);
+  font-family: 'Style Script';
+  font-size: 5rem;
+  transition: opacity .8s ease-in-out;
+}
+
+/* .barber_card_content1:hover,
+.barber_card_content2:hover,
+.barber_card_content3:hover {
+  backdrop-filter: blur(.3rem);
+  -webkit-backdrop-filter: blur(.3rem);
+} */
+
+.barber_card_content1::before,
+.barber_card_content2::before,
+.barber_card_content3::before{
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: none;
+  opacity: 0;
+  content: '';
+  backdrop-filter: blur(.3rem);
+  font-size: 2.5rem;
+  position: absolute;
+  transition: opacity 0.8s, transform 0.8s;
+}
+
+.barber_card_content1:hover::before,
+.barber_card_content2:hover::before,
+.barber_card_content3:hover::before {
+  opacity: 1;
+}
+
+.barber_card_content1:hover .name_barber1,
+.barber_card_content2:hover .name_barber2,
+.barber_card_content3:hover .name_barber3 {
+  opacity: 1;
+}
+
+
+/************* WORKS SECTION ***************/
+
+#Works {
+  background-color: black;
+  width: 100vw;
+  height: fit-content;
+}
+
+.img_work {
+  width: 100%;
+  height: 100%;
+}
+
+.works_gallery {
+  position: relative;
+  bottom: -10rem;
+  width: 100vw;
+  height: auto;
+  display: grid;
+  padding: 20rem 2rem 10rem 2rem;
+  grid-template-areas:
+                        "work_8 work_3 work_2"
+                        "work_8 work_3 work_2"
+                        "work_5 work_3 work_4"
+                        "work_5 work_1 work_4"
+                        "work_6 work_1 work_7"
+                        "work_6 work_1 work_7";
+
+}
+
+.work_1, .work_2, .work_3,
+.work_4, .work_5, .work_6,
+.work_7, .work_8 {
+  margin: .7rem;
+}
+
+.work_1 {
+  grid-area: work_1;
+  background-color: rebeccapurple;
+}
+
+.work_2 {
+  grid-area: work_2;
+  background-color: red;
+}
+
+.work_3 {
+  grid-area: work_3;
+  background-color: blue;
+}
+
+.work_4 {
+  grid-area: work_4;
+  background-color: white;
+}
+
+.work_5 {
+  grid-area: work_5;
+  background-color: black;
+  height: 70rem;
+}
+
+.work_6 {
+  grid-area: work_6;
+  background-color: violet;
+}
+
+.work_7 {
+  grid-area: work_7;
+  background-color: brown;
+}
+
+.work_8 {
+  grid-area: work_8;
+  background-color: yellow;
+}
+
+/************* APPOINTMENT SECTION ***************/
+#Appointment {
+  height: 100vh;
+  width: 100vw;
+	height: 100vh;
+	background-color: #352e01;
+  opacity: 1;
+  background-image:  linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(30deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(150deg, #000000 12%, transparent 12.5%, transparent 87%, #000000 87.5%, #000000), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077), linear-gradient(60deg, #00000077 25%, transparent 25.5%, transparent 75%, #00000077 75%, #00000077);
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+}
+
+.formulary {
+  position: absolute;
+  top: 35%;
+  right: 50%;
+  transform: translateX(50%);
+  width: 85rem;
+}
+
+.formulary form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input_form {
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: none;
+  font-family: 'Fanwood Text italic';
+  font-size: 2rem;
+}
+
+.label_form {
+  margin: 1rem 0 .5rem .5rem;
+  font-family: 'Fanwood Text regular';
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: white;
+}
+
+.btn_container {
+  position: absolute;
+  top: 50%;
+  right: -15rem;
+}
+
+.btn_submit {
+  margin: 2rem 0 0 0;
+  border: none;
+  border-radius: 50rem;
+  padding: 2rem;
+  cursor: pointer;
+  font-family: 'Style Script';
+  font-size: 2.5rem;
+  font-weight: 900;
+  background-color: white;
+}
+
+/***************** FOOTER **************/
+footer {
+  height: 50rem;
+  width: 100vw;
+  background-color: grey;
+}
+
+.footer_nav {
+  position: absolute;
+  width: 100vw;
+}
+
+.footer_menu {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  text-align: end;
+  padding: 5rem;
+  font-family: 'Fanwood Text regular';
+  font-size: 3rem;
+  width: 100%;
+}
+
+.footer_menu_item {
+  color: black;
+  transition: color .3s;
+}
+
+.footer_menu li {
+  margin-bottom: .4rem;
+}
+
+.footer_menu_item:hover {
+  color: white;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  font-family: 'Fanwood Text regular';
+  font-weight: 600;
+  font-size: 3rem;
+  color: white;
+}
+
+.contact span {
+  margin-right: 10rem;
+  transition: color .4s ease-in-out;
+  cursor: pointer;
+}
+
+.contact span:hover {
+  color: black;
+}
+
+.credits {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  bottom: 0;
+  padding-bottom: 1rem;
+  font-family: 'Fanwood Text italic';
+  font-weight: 600;
+  font-size: 2rem;
+  color: white;
+  align-items: flex-end;
+}
+
+.developer {
+  font-family: 'Style Script';
+  font-size: 3rem;
+  margin-left: 1rem;
+  transition: color .4s ease-in-out;
+}
+
+.developer:hover {
+  color: black;
+}
+
+#btn_menu {
+  display: none;
+}
+
+/********* POLE BARBERSHOP ************/
+
+.barberIconContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 20rem;
+  height: 30rem;
+  position: absolute;
+  top: 15rem;
+}
+
+.pole_right {
+  right: 5rem;
+}
+
+.pole_left {
+  left: 5rem;
+}
+
+.ball{
+  height: 15rem;
+	width: 5rem;
+  border-radius: 50%;
+	background-color: #fefbe3;
+}
+
+.endCap{
+  width: 10rem;
+  height: 15rem;
+  margin-top: .7rem;
+  margin-bottom: .7rem;
+  background-color: #fefbe3;
+}
+
+.cap{
+	width: 15rem;
+  height: 15rem;
+	background-color: #fefbe3;
+}
+
+.barberWrap{
+	display: flex;
+  justify-content: center;
+  height: 20rem;
+  width: 20rem;
+  margin-top: .7rem;
+  margin-bottom: .7rem;
+}
+
+.barber{
+	height: 20rem;
+	width: 10rem;
+	position: inherit;
+	background:#fefbe3;
+	background-color: -webkit-linear-gradient(-90deg, transparent 25%, #130250 50%, transparent 75%, #8f0505 50%);
+	background: -moz-linear-gradient(-90deg, transparent 25%, #130250 50, transparent 75%, #8f0505 50%);
+	background: -o-linear-gradient(-90deg, transparent 25%, #130250 50%, transparent 75%, #8f0505 50%);
+	background: linear-gradient(-90deg, transparent 25%, #130250 50%, transparent 75%, #8f0505 50%);
+	background-size: 2.5rem 1rem;
+	-webkit-animation: barberpole 3s infinite linear;
+  animation: barberpole 3s infinite linear;
+}
+
+@-webkit-keyframes barberpole {
+		from {background-position: 0%;}
+		to {background-position: 100%;}
+}
+
+/********** MEDIAS ***************/
+
+@media screen and (max-width: 1350px){
+
+  #btn_menu {
+    display: block;
+    top: 2rem;
+    position: absolute;
+    right: 2rem;
+  }
+
+  .btn_container_open {
+    position: relative;
+    top: 0;
+  }
+
+  .btn_container_close {
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 0;
+    transition: display .3s;
+  }
+
+  .show {
+    display: block;
+  }
+
+  .hidde {
+    display: none;
+  }
+
+  .menu {
+    height: 70vh;
+    background-color: rgba(0, 0, 0, 0.78);
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 1s ease-in-out;
+    justify-content: space-evenly;
+  }
+
+  .menu_item {
+    font-size: 7rem;
+  }
+
+  .menu.open {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (min-width:1024px) and (max-width: 1350px) {
+
+  .home_info_appointment {
+    width: 60rem;
+    height: 65rem;
+  }
+
+  .home_info_appointment_text {
+    font-size: 4.5rem;
+  }
+
+  .home_info_hours {
+    font-size: 4rem;
+  }
+
+  #Works {
+    height: fit-content;
+  }
+
+  .works_gallery {
+    height: auto;
+  }
+
+  .work_5 {
+    height: 70rem;
+  }
+
+  .formulary {
+    width: 105rem;
+  }
+
+  .input_form {
+    padding: 2.5rem;
+    font-size: 3rem;
+  }
+
+  .btn_submit {
+    padding: 3rem;
+  }
+
+  .footer_menu  {
+    font-size: 3rem;
+  }
+
+  .credits {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width:767px) and (max-width: 1024px) {
+  .home_info_appointment {
+    width: 85rem;
+    height: 90rem;
+  }
+
+  .home_info_appointment_text {
+    font-size: 7rem;
+  }
+
+  .home_info_hours {
+    font-size: 5rem;
+  }
+
+  .formulary {
+    top: 27%;
+  }
+
+  .input_form {
+    padding: 3rem;
+    font-size: 4rem;
+  }
+
+  .label_form {
+    margin-top: 5rem
+  }
+
+  .btn_container {
+    right: -20rem;
+  }
+
+  .btn_submit {
+    padding: 5rem;
+    font-size: 5.5rem;
+  }
+
+  .section_title_text {
+    font-size: 9rem;
+  }
+
+  .section_cards {
+    top: 30%;
+  }
+
+  .about_info {
+    height: 40vh;
+    width: 80vw;
+  }
+
+  .about_info span {
+    font-size: 6rem;
+  }
+
+  .works_gallery {
+    position: relative;
+    padding-top: 30rem;
+    bottom: 0;
+  }
+
+  .input_form {
+    font-size: 5rem;
+  }
+
+  .label_form {
+    font-size: 4.5rem;
+  }
+
+  .contact {
+    font-size: 5rem;
+  }
+
+  .credits {
+    font-size: 2.5rem;
+  }
+
+  .developer {
+    font-size: 5rem;
+  }
+
+  .footer_menu {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home_info_appointment {
+    width: 40rem;
+    height: 45rem;
+  }
+
+  .home_info_appointment_text {
+    font-size: 3rem;
+  }
+
+  .home_info_hours {
+    font-size: 2rem;
+  }
+
+  .about_cards {
+    width: 70rem;
+  }
+
+  .about_info {
+    padding: 2rem;
+  }
+
+  .about_info span{
+    font-size: 2.7rem;
+  }
+
+  #Barbers {
+    height: max-content;
+  }
+
+  .section_cards {
+    position: relative;
+    top: 30rem;
+    grid-template-rows: repeat(3, 40rem);
+    grid-template-columns: auto;
+  }
+
+  .section_cards_info {
+    height: 95%;
+  }
+
+  .section_title {
+    width: 85%;
+  }
+
+  #Works .section_title,
+  #Barbers .section_title {
+    margin-top: 5rem;
+  }
+
+  .works_gallery {
+    position: relative;
+    padding-top: 17rem;
+    bottom: 0;
+  }
+
+  .formulary {
+    width: 50rem;
+    top: 33%;
+    left: -20rem;
+  }
+
+  .input_form {
+    padding: 1rem;
+    font-size: 3rem;
+  }
+
+  .label_form {
+    margin-top: 1rem;
+  }
+
+  .btn_container {
+    right: -10rem;
+  }
+
+  .btn_submit {
+    padding: 2rem;
+  }
+
+  .footer_menu {
+    font-size: 2rem;
+  }
+
+  .contact {
+    height: 100%;
+    justify-content: center;
+  }
+
+  .contact span {
+    margin-right: 5rem;
+  }
+
+  .footer_menu {
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100vw;
+  }
+
+  .credits {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .barberIconContainer {
+    display: none;
+  }
+}
